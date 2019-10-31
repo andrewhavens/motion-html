@@ -6,18 +6,11 @@ module Motion
 
     class Doc
       def initialize(html)
-        @doc = IGHTMLDocument.alloc.initWithHTMLString(html, error: nil)
+        @doc = HTMLDocument.documentWithString(html)
       end
 
       def query(q)
-        if q =~ %r{^[//|/]}
-          node_set = @doc.queryWithXPath(q)
-        else
-          node_set = @doc.queryWithCSS(q)
-        end
-        nodes = []
-        node_set.enumerateNodesUsingBlock -> (node, index, stop) { nodes << node }
-        nodes
+        nodes = @doc.querySelectorAll(q)
       end
     end
   end

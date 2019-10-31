@@ -2,7 +2,7 @@
 
 Parse and traverse HTML in your RubyMotion app. It's like Nokogiri for RubyMotion!
 
-Motion::HTML uses [IGHTMLQuery](https://github.com/siuying/IGHTMLQuery) under the hood.
+Motion::HTML uses [HTMLKit](https://github.com/iabudiab/HTMLKit) under the hood.
 
 Currently, only iOS and OS X are supported.
 
