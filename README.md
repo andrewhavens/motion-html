@@ -1,8 +1,8 @@
-# Motion::HTML
+# motion-html
 
 Parse and traverse HTML in your RubyMotion app. It's like Nokogiri for RubyMotion!
 
-Motion::HTML uses [HTMLKit](https://github.com/iabudiab/HTMLKit) under the hood.
+`motion-html` uses [HTMLKit](https://github.com/iabudiab/HTMLKit) under the hood.
 
 Currently, only iOS and OS X are supported.
 
@@ -10,7 +10,7 @@ Currently, only iOS and OS X are supported.
 
 Add this line to your application's Gemfile:
 
-    gem 'motion-html'
+    gem 'motion-html', '~> 2.0'
 
 And then execute:
 
@@ -22,7 +22,7 @@ Initialize a new document:
 ```ruby
 doc = Motion::HTML::Doc.new(html)
 # or simply:
-doc = Motion::HTML.parse(html)
+doc = HTML.parse(html)
 ```
 
 Then query using css or xpath selectors. It returns an array of nodes:

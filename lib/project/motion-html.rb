@@ -15,3 +15,5 @@ module Motion
     end
   end
 end
+
+HTML = Motion::HTML
