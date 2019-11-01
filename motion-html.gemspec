@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "motion-html"
-  spec.version       = "2.0.0"
+  spec.version       = "2.0.1"
   spec.authors       = ["Andrew Havens"]
   spec.email         = ["email@andrewhavens.com"]
   spec.description   = %q{Parse and traverse HTML in your RubyMotion app. It's like Nokogiri for RubyMotion!}
