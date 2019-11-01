@@ -25,20 +25,35 @@ doc = Motion::HTML::Doc.new(html)
 doc = HTML.parse(html)
 ```
 
-Then query using css or xpath selectors. It returns an array of nodes:
+Then query using CSS3 selectors to find one or an array of elements:
 ```ruby
-nodes = doc.query('.photos li a')
+array_of_links = doc.all('.photos li a')
+first_li = doc.first('.photos li')
+element = doc.find('#one-and-only')
 ```
 
-Iterate over the results, and use the attributes or content:
+Each item returned from a query will be an `Element` object. You can then access attributes or text content:
 ```ruby
-nodes.each do |node|
-  puts "Link text: " + node.text
-  puts "Link URL: " + node['href']
+links = doc.all('.photos li a')
+links.each do |el|
+  puts "Link tag: " + el.tag
+  puts "Link text: " + el.text
+  puts "Link URL: " + el['href']
+  puts "Link attributes: " + el.attributes.inspect
 end
 ```
 
-So far, these are the only features that I have needed. Feel free to submit a GitHub issue if you need anything else.
+With an `Element`, you can traverse to its parent, children, or next sibling:
+```ruby
+first_list_item = doc.first('.photos li')
+unordered_list = first_list_item.parent
+links = first_list_item.children
+second_list_item = first_list_item.next_sibling
+```
+
+See the [`main_spec.rb`](https://github.com/andrewhavens/motion-html/blob/master/spec/main_spec.rb) file for more examples.
+
+Feel like something is missing? Submit a GitHub issue if you need anything other features.
 
 ## Contributing
 
